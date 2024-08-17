@@ -1,0 +1,15 @@
+C:\Users\HuseyinCan\source\repos\WebProje\varlikKatmani\bin\Debug\net5.0\varlikKatmani.deps.json
+C:\Users\HuseyinCan\source\repos\WebProje\varlikKatmani\bin\Debug\net5.0\varlikKatmani.runtimeconfig.json
+C:\Users\HuseyinCan\source\repos\WebProje\varlikKatmani\bin\Debug\net5.0\varlikKatmani.runtimeconfig.dev.json
+C:\Users\HuseyinCan\source\repos\WebProje\varlikKatmani\bin\Debug\net5.0\varlikKatmani.dll
+C:\Users\HuseyinCan\source\repos\WebProje\varlikKatmani\bin\Debug\net5.0\varlikKatmani.pdb
+C:\Users\HuseyinCan\source\repos\WebProje\varlikKatmani\obj\Debug\net5.0\varlikKatmani.csproj.AssemblyReference.cache
+C:\Users\HuseyinCan\source\repos\WebProje\varlikKatmani\obj\Debug\net5.0\varlikKatmani.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HuseyinCan\source\repos\WebProje\varlikKatmani\obj\Debug\net5.0\varlikKatmani.AssemblyInfoInputs.cache
+C:\Users\HuseyinCan\source\repos\WebProje\varlikKatmani\obj\Debug\net5.0\varlikKatmani.AssemblyInfo.cs
+C:\Users\HuseyinCan\source\repos\WebProje\varlikKatmani\obj\Debug\net5.0\varlikKatmani.csproj.CoreCompileInputs.cache
+C:\Users\HuseyinCan\source\repos\WebProje\varlikKatmani\obj\Debug\net5.0\varlikKatmani.dll
+C:\Users\HuseyinCan\source\repos\WebProje\varlikKatmani\obj\Debug\net5.0\refint\varlikKatmani.dll
+C:\Users\HuseyinCan\source\repos\WebProje\varlikKatmani\obj\Debug\net5.0\varlikKatmani.pdb
+C:\Users\HuseyinCan\source\repos\WebProje\varlikKatmani\obj\Debug\net5.0\varlikKatmani.genruntimeconfig.cache
+C:\Users\HuseyinCan\source\repos\WebProje\varlikKatmani\obj\Debug\net5.0\ref\varlikKatmani.dll

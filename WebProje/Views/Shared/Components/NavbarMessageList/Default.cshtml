@@ -1,0 +1,17 @@
+﻿@using varlikKatmani.Concrete
+@model List<writerMessage>
+
+	@foreach (var item in Model)
+	{
+		<a class="dropdown-item preview-item" href="/AdminMessage/SeeRecievedMessage/@item.writerMessageID">
+			<div class="preview-thumbnail">
+			@await Component.InvokeAsync("SenderImage", new { email = item.sender })
+			</div>
+			<div class="preview-item-content">
+				<p class="preview-subject ellipsis mb-1">@item.senderName</p>
+				<p class="preview-subject ellipsis mb-1">@item.subject</p>
+				<p class="text-muted mb-0"> @item.date.ToShortDateString() </p>
+			</div>
+		</a>
+	}
+	

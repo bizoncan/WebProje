@@ -1,0 +1,53 @@
+﻿@using varlikKatmani.Concrete
+@model List<writerUser>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+<div class="col-md-6">
+    <div class="p-2">
+        <button type="button" id="getlistall" class="btn btn-outline-primary">Verileri getir</button>
+        <button type="button" id="adduser" class="btn btn-outline-info">Verileri getir</button>
+    </div>
+</div>
+
+<h4 class="text-center">Yazarlar Listesi</h4>
+<div class="p-2" id="listuser"></div>
+
+<br />
+<div class="col-md-12">
+   <input type="text" class="form-control" id="inpName" placeholder="ad" />
+   <br />
+   <input type="text" class="form-control" id="inpName" placeholder="ad" />
+   <br />
+   <input type="text" class="form-control" id="inpName" placeholder="ad" />
+    <br />
+   <input type="text" class="form-control" id="inpName" placeholder="ad" />
+    <br />
+   <input type="text" class="form-control" id="inpName" placeholder="ad" />
+</div>
+
+
+
+
+@section Scripts
+{
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script>
+        $("#getlistall").click(function () {
+            $.ajax({
+                contentType: "application/json",
+                dataType: "json",
+                type: "GET",
+                url: "/WriterUser/ListUser/",
+                success: function (data) {
+                    console.log(data);
+                    // Burada gelen veriyi istediğiniz gibi işleyebilirsiniz
+                },
+                error: function (xhr, status, error) {
+                    console.error("Hata oluştu: ", error);
+                }
+            });
+        });
+    </script>
+}

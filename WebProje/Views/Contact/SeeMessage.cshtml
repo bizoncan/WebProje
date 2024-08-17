@@ -1,0 +1,40 @@
+﻿@model varlikKatmani.Concrete.message
+@{
+    ViewData["Title"] = "SeeMessage";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Mesajlar</h4>
+            <p class="card-description">  </p>
+            <form class="forms-sample">
+                <div class="form-group">
+                    <label style="font-size: 20px">ID</label>
+                    <p class="form-control-static">@Model.messageID</p>
+                    @Html.HiddenFor(x => x.messageID)
+                </div>
+                <div class="form-group">
+                    <label style="font-size: 20px">İsim</label>
+                    <p class="form-control-static">@Model.name</p>
+                </div>
+                <div class="form-group">
+                    <label style="font-size: 20px">Mail</label>
+                    <p class="form-control-static">@Model.mail</p>
+                </div>
+                <div class="form-group">
+                    <label style="font-size: 20px">İçerik</label>
+                    <p class="form-control-static">@Model.content</p>
+                </div>
+                <div class="form-group">
+                    <label style="font-size: 20px">Tarih</label>
+                    <p class="form-control-static">@Model.date</p>
+                </div>
+                <a class="btn btn-info" href="/Contact/Index/">Geri Çık</a>
+              
+            </form>
+        </div>
+    </div>
+</div>
+

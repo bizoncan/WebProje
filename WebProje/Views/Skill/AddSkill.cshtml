@@ -1,0 +1,27 @@
+﻿@model varlikKatmani.Concrete.skill
+@{
+    ViewData["Title"] = "AddSkill";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+
+
+@using (Html.BeginForm("AddSkill", "Skill", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Yetenek Ekleme</h4>
+                <p class="card-description">  </p>
+                <form class="forms-sample">
+                    <label>Yetenek Başlığı</label>
+                    @Html.TextAreaFor(x => x.title , new {@class ="form-control" } ) 
+                    <label>Değer</label>
+                    @Html.TextAreaFor(x => x.value, new { @class = "form-control" })
+                    <br />
+                    <button class="btn btn-outline-success">Kaydet</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}

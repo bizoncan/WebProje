@@ -1,0 +1,43 @@
+﻿@model varlikKatmani.Concrete.service
+@{
+    ViewData["Title"] = "EditPortfolio";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+<div class="card-header border-0">
+    <h3 class="mb-0">Proje Düzenleme    </h3>
+</div>
+<br />
+@using (Html.BeginForm("EditService", "Service", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Hakkımda Düzenleme</h4>
+                <p class="card-description">  </p>
+                <form class="forms-sample">
+                    <div class="form-group">
+                        <label>ID</label>
+                        <p class="form-control-static">@Model.serviceID</p>
+                        @Html.HiddenFor(x => x.serviceID)
+                    </div>
+
+
+
+                    @Html.Label("Hizmet Adı")
+                    @Html.TextBoxFor(x => x.title, new { @class = "form-control" })
+
+
+                    <br />
+                    @Html.Label("Resim Adresi")
+                    @Html.TextBoxFor(x => x.imageURL, new { @class = "form-control" })
+
+
+                    <br />
+                    <button class="btn btn-outline-success">Güncelle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+
+

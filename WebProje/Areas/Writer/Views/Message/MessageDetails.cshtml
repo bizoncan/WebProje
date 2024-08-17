@@ -1,0 +1,55 @@
+﻿@model varlikKatmani.Concrete.writerMessage
+@{
+    ViewData["Title"] = "MessageDetails";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Mesaj Detayları</h3>
+    </div>
+    <div class="card-body">
+        <div class="row mb-3">
+            <div class="col-md-3 font-weight-bold">ID:</div>
+            <div class="col-md-9">
+                <p class="form-control-plaintext">@Model.writerMessageID</p>
+            </div>
+        </div>
+        @Html.HiddenFor(x => x.writerMessageID)
+
+        <div class="row mb-3">
+            <div class="col-md-3 font-weight-bold">Gönderen Adı:</div>
+            <div class="col-md-9">
+                <p class="form-control-plaintext">@Model.senderName</p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-3 font-weight-bold">Gönderen Mail:</div>
+            <div class="col-md-9">
+                <p class="form-control-plaintext">@Model.sender</p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-3 font-weight-bold">Alıcı Adı:</div>
+            <div class="col-md-9">
+                <p class="form-control-plaintext">@Model.recieverName</p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-3 font-weight-bold">Alıcı Mail:</div>
+            <div class="col-md-9">
+                <p class="form-control-plaintext">@Model.reciever</p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-3 font-weight-bold">İçerik:</div>
+            <div class="col-md-9">
+                <p class="form-control-plaintext">@Model.messageContent</p>
+            </div>
+        </div>
+    </div>
+</div>

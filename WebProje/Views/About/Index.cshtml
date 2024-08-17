@@ -1,0 +1,56 @@
+﻿@model varlikKatmani.Concrete.about
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("EditAbout", "About", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Hakkımda Düzenleme</h4>
+                <p class="card-description">  </p>
+                <form class="forms-sample">
+                    <div class="form-group">
+                        <label>ID</label>
+                        <p class="form-control-static">@Model.aboutID</p>
+                        @Html.HiddenFor(x => x.aboutID)
+                    </div>
+                    @Html.Label("Ünvan")
+                    @Html.TextBoxFor(x => x.title, new { @class = "form-control" })
+
+
+                    <br />
+                    @Html.Label("Açıklama")
+                    @Html.TextAreaFor(x => x.description,6,3, new { @class = "form-control" })
+
+                    <br />
+                    @Html.Label("Yaş")
+                    @Html.TextBoxFor(x => x.age, new { @class = "form-control" })
+
+                    <br />
+                    @Html.Label("Mail")
+                    @Html.TextBoxFor(x => x.mail, new { @class = "form-control" })
+
+                    <br />
+                    @Html.Label("Telefon")
+                    @Html.TextBoxFor(x => x.phone, new { @class = "form-control" })
+
+                    <br />
+                    @Html.Label("Adres")
+                    @Html.TextBoxFor(x => x.address, new { @class = "form-control" })
+
+                    <br />
+                    @Html.Label("Resim Adresi")
+                    @Html.TextBoxFor(x => x.imageURL, new { @class = "form-control" })
+
+                    <br />
+                    <button class="btn btn-outline-success">Güncelle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+

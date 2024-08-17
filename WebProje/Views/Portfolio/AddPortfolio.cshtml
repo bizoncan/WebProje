@@ -1,0 +1,74 @@
+﻿@model varlikKatmani.Concrete.portfolio
+@{
+    ViewData["Title"] = "AddPortfolio";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("AddPortfolio", "Portfolio", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Hakkımda Ekle</h4>
+                <p class="card-description">  </p>
+                
+                    @Html.Label("Proje Adı")
+                    @Html.TextBoxFor(x => x.name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.name)
+
+                    <br />
+                    @Html.Label("Resim Adresi")
+                    @Html.TextBoxFor(x => x.imageURL, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.imageURL2)
+
+                    <br />
+                    @Html.Label("Büyük Resim Adresi")
+                    @Html.TextBoxFor(x => x.imageURL2, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.imageURL2)
+
+                    <br />
+                    @Html.Label("Proje Adresi")
+                    @Html.TextBoxFor(x => x.projectURL, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.projectURL)
+
+                    <br />
+                    @Html.Label("Küçük Resim 1 Adres")
+                    @Html.TextBoxFor(x => x.img1, new { @class = "form-control" })
+
+                    <br />
+                    @Html.Label("Küçük Resim 2 Adres")
+                    @Html.TextBoxFor(x => x.img2, new { @class = "form-control" })
+
+                    <br />
+                    @Html.Label("Küçük Resim 3 Adres")
+                    @Html.TextBoxFor(x => x.img3, new { @class = "form-control" })
+
+                    <br />
+                    @Html.Label("Küçük Resim 4 Adres")
+                    @Html.TextBoxFor(x => x.img4, new { @class = "form-control" })
+
+                    <br />
+                    @Html.Label("Platform")
+                    @Html.TextBoxFor(x => x.platform, new { @class = "form-control" })
+
+                    <br />
+                    @Html.Label("Ücret")
+                    @Html.TextBoxFor(x => x.price, new { @class = "form-control" })
+
+                    @Html.Label("Durum")
+                    @Html.TextBoxFor(x => x.status, new { @class = "form-control" })
+
+                    <br />
+                    @Html.Label("Tamamlanma Oranı")
+                    @Html.TextBoxFor(x => x.value, new { @class = "form-control" })
+
+                    <br />
+                    <button class="btn btn-success">Kaydet</button>
+                  
+           
+            </div>
+        </div>
+    </div>
+}
+
+

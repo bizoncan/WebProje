@@ -1,0 +1,46 @@
+﻿@model varlikKatmani.Concrete.portfolio
+@{
+    ViewData["Title"] = "DeletePortfolio";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+<div class="card-header border-0">
+    <h3 class="mb-0">Proje  Silme</h3>
+</div>
+
+@using (Html.BeginForm("DeletePortfolio","Portfolio",FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Hakkımda Düzenleme</h4>
+                <p class="card-description">  </p>
+                <form class="forms-sample">
+                    <div class="form-group">
+                        <label>ID</label>
+                        <p class="form-control-static">@Model.portfolioID</p>
+                        @Html.HiddenFor(x => x.portfolioID)
+                    </div>
+
+                    <br />
+                    @Html.Label("Bu isme sahip projeyi silmek istediğinize emin misiniz")
+
+                    <h1>@Model.name</h1>
+
+
+
+                    <br />
+                    <button class="btn btn-outline-danger" name="button" value="Sil">Sil</button>
+
+                    <br />
+                    <button class="btn btn-outline-danger" name="button" value="Silme">Silme</button>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+

@@ -1,0 +1,16 @@
+﻿@model varlikKatmani.Concrete.annoucement
+@{
+    ViewData["Title"] = "AnnoucementDetails";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+<form claas="form-control">
+    @Html.Label("ID")
+    <p class="form-control-static">@Model.annoucementID</p>
+    @Html.HiddenFor(x => x.annoucementID)
+    <br />
+    @Html.Label("Content")
+     <p class="form-control-static">@Model.content</p>
+
+
+
+</form>

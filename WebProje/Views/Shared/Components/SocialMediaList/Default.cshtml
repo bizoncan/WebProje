@@ -1,0 +1,12 @@
+﻿@using varlikKatmani.Concrete
+@model List<socialMedia>
+<nav role="navigation">
+	<ul class="nav justify-content-left">
+		@foreach (var item in Model)
+		{
+			<li class="nav-item"><a class="nav-link" href="@item.url" title="@item.name"><i class="@item.icon"></i><span class="menu-title sr-only">@item.name</span></a></li>
+		}
+		
+		
+	</ul>
+</nav>

@@ -1,0 +1,60 @@
+﻿@model varlikKatmani.Concrete.writerMessage
+
+@{
+    ViewData["Title"] = "SeeSentMessage";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title text-center mb-4">Mesaj Detayları</h4>
+            <form class="forms-sample">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label style="font-size: 18px; font-weight: 600;">ID</label>
+                        <p class="form-control-white-text border rounded p-2 bg-navy">@Model.writerMessageID</p>
+                        @Html.HiddenFor(x => x.writerMessageID)
+                    </div>
+                    <div class="col-md-6">
+                        <label style="font-size: 18px; font-weight: 600;">Başlık</label>
+                        <p class="form-control-white-text border rounded p-2 bg-navy">@Model.subject</p>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label style="font-size: 18px; font-weight: 600;">Gönderen</label>
+                        <p class="form-control-white-text border rounded p-2 bg-navy">@Model.recieverName</p>
+                    </div>
+                    <div class="col-md-6">
+                        <label style="font-size: 18px; font-weight: 600;">Gönderen Mail</label>
+                        <p class="form-control-white-text border rounded p-2 bg-navy">@Model.reciever</p>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <label style="font-size: 18px; font-weight: 600;">İçerik</label>
+                        <p class="form-control-white-text border rounded p-2 bg-navy">@Model.messageContent</p>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <label style="font-size: 18px; font-weight: 600;">Tarih</label>
+                        <p class="form-control-white-text border rounded p-2 bg-navy">@Model.date</p>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <a class="btn btn-info btn-lg" href="/AdminMessage/SenderMessageList/">Geri Çık</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

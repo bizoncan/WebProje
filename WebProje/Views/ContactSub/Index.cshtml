@@ -1,0 +1,47 @@
+﻿@model varlikKatmani.Concrete.contact
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+@using (Html.BeginForm("ContactSub", "Index", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">İletişim Bilgileri Düzenleme</h4>
+                <p class="card-description">  </p>
+                <form class="forms-sample">
+                    <div class="form-group">
+                        <label>ID</label>
+                        <p class="form-control-static">@Model.contactID</p>
+                        @Html.HiddenFor(x => x.contactID)
+                    </div>
+                    @Html.Label("Başlık")
+                    @Html.TextBoxFor(x => x.title, new { @class = "form-control" })
+
+
+                    <br />
+                    @Html.Label("Başlık")
+                    @Html.TextAreaFor(x => x.title, 6, 3, new { @class = "form-control" })
+
+                    <br />
+                    @Html.Label("Açıklama")
+                    @Html.TextBoxFor(x => x.description, new { @class = "form-control" })
+
+                    <br />
+                    @Html.Label("Mail")
+                    @Html.TextBoxFor(x => x.mail, new { @class = "form-control" })
+
+                    <br />
+                    @Html.Label("Telefon")
+                    @Html.TextBoxFor(x => x.phone, new { @class = "form-control" })
+
+                    <br />
+                    <button class="btn btn-outline-success">Güncelle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+
+

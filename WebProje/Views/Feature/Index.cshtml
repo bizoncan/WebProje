@@ -1,0 +1,44 @@
+﻿@model varlikKatmani.Concrete.feature
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("EditFeature", "Feature", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Öne Çıkan Düzenle</h4>
+                <p class="card-description">  </p>
+                <form class="forms-sample">
+                    <div class="form-group">
+                        <label>ID</label>
+                        <p class="form-control-static">@Model.FeatureID</p>
+                        @Html.HiddenFor(x => x.FeatureID)
+                    </div>
+                 
+
+                    @Html.Label("Deneyim Adı")
+                    @Html.TextBoxFor(x => x.Header, new { @class = "form-control" })
+
+
+                    <br />
+                    @Html.Label("Deneyim Tarihi")
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+
+                    <br />
+                    @Html.Label("Resim Adresi")
+                    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+
+
+
+                    <br />
+                    <button class="btn btn-outline-success">Güncelle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+

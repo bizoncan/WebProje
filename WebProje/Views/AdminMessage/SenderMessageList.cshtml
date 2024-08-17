@@ -1,0 +1,62 @@
+﻿@using varlikKatmani.Concrete
+@model List<writerMessage>
+@{
+    ViewData["Title"] = "SenderMessageList";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Mesajlar</h4>
+            <p class="card-description">
+
+            </p>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>İsim</th>
+                            <th>Başlık</th>
+                            <th>Tarih</th>
+                            <th>Sil</th>
+                            <th>Düzenle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+                            <tr>
+                                <td>@item.writerMessageID</td>
+                                <td>@item.recieverName</td>
+                                <td>@item.subject</td>
+                                <td>@item.date</td>
+                                <td><button onclick="redirectToUrl('/AdminMessage/DeleteAdminMessage/@item.writerMessageID?&s=sender')" name="button" value="sender" class="btn btn-outline-danger">Sil</button></td>
+                                <td><a href="/AdminMessage/SeeSentMessage/@item.writerMessageID" class="btn btn-outline-success">Gör</a></td>
+                                
+                            </tr>
+                            
+
+                        }
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function redirectToUrl(url) {
+        window.location.href = url;
+    }
+</script>
+
+
+
+
+

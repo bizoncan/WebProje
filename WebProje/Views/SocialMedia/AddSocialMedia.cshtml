@@ -1,0 +1,37 @@
+﻿@model varlikKatmani.Concrete.socialMedia
+@{
+    ViewData["Title"] = "AddSocialMedia";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("AddSocialMedia", "SocialMedia", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Deneyim Ekle</h4>
+                <p class="card-description">  </p>
+                <form class="forms-sample">
+
+                    <div class="form-group">
+                        <label>Başlık</label>
+                        @Html.TextAreaFor(x => x.name, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>URL</label>
+                        @Html.TextAreaFor(x => x.url, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Resim Adresi</label>
+                        @Html.TextAreaFor(x => x.icon, new { @class = "form-control" })
+                    </div>
+                   
+                    <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                    <button class="btn btn-dark">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+}

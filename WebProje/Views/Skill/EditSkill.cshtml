@@ -1,0 +1,40 @@
+﻿@model varlikKatmani.Concrete.skill
+@{
+    ViewData["Title"] = "EditSkill";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Yetenek Tablosu    </h3>
+</div>
+@using (Html.BeginForm("EditSkill", "Skill", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Hakkımda Düzenleme</h4>
+                <p class="card-description">  </p>
+                <form class="forms-sample">
+                    <div class="form-group">
+                        <label>ID</label>
+                        <p class="form-control-static">@Model.skillID</p>
+                        @Html.HiddenFor(x => x.skillID)
+                    </div>
+
+                    <label>Yetenek Başlığı</label>
+                    @Html.TextBoxFor(x => x.title, new { @class = "form-control" })
+
+
+                    <br />
+                    <label>Değer</label>
+                    @Html.TextBoxFor(x => x.value, new { @class = "form-control" })
+                    <br />
+                    <button class="btn btn-outline-success">Güncelle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+}
+
+
