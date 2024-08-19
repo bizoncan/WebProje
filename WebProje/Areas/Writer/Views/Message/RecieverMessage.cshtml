@@ -18,6 +18,7 @@
                         <tr>
                             <th>#</th>
                             <th>Konu</th>
+                            <th>Gönderen Resmi</th>
                             <th>Gönderen</th>
                             <th>Gönderen Mail</th>
                             <th>Tarih</th>
@@ -31,7 +32,8 @@
                             <tr>
                                 <td>@item.writerMessageID</td>
                                 <td>@item.subject</td>
-                                <td>@item.senderName</td>
+                                <td>  @await Component.InvokeAsync("MessageImage" ,new {mail=item.sender}) </td>
+                                <td> @item.senderName</td>
                                 <td>@item.sender</td>
                                 <td>@(((DateTime)item.date).ToString("dd-MMM-yyyy"))</td>
                                @*  <td><label class="@color">@item.status</label>@item.c</td> *@

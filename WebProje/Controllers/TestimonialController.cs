@@ -36,5 +36,19 @@ namespace WebProje.Controllers
             return RedirectToAction("Index");
 
         }
+        [HttpGet]
+        public ActionResult AddTestimonial()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddTestimonial(testimonial p)
+        {
+            testimonialManager.TAdd(p);
+            return RedirectToAction("Index");
+
+        }
     }
+
 }

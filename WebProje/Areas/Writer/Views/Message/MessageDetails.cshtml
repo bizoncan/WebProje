@@ -18,6 +18,16 @@
         @Html.HiddenFor(x => x.writerMessageID)
 
         <div class="row mb-3">
+            <div class="col-md-3 font-weight-bold">Gönderen Resmi:</div>
+            <div class="col-md-9">
+                <div class="user-image-container">
+                    @await Component.InvokeAsync("MessageImage", new { mail = Model.sender })
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row mb-3">
             <div class="col-md-3 font-weight-bold">Gönderen Adı:</div>
             <div class="col-md-9">
                 <p class="form-control-plaintext">@Model.senderName</p>
@@ -28,6 +38,15 @@
             <div class="col-md-3 font-weight-bold">Gönderen Mail:</div>
             <div class="col-md-9">
                 <p class="form-control-plaintext">@Model.sender</p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-3 font-weight-bold">Gönderen Resmi:</div>
+            <div class="col-md-9">
+                <div class="user-image-container">
+                    @await Component.InvokeAsync("MessageImage", new { mail = Model.reciever })
+                </div>
             </div>
         </div>
 
@@ -53,3 +72,12 @@
         </div>
     </div>
 </div>
+<style>
+    .user-image-container img {
+        width: 75px;
+        height: 75px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+</style>

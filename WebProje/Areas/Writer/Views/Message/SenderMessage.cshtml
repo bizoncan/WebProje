@@ -19,6 +19,7 @@
                         <tr>
                             <th>#</th>
                             <th>Konu</th>
+                            <th>Gönderilen Resmi</th>
                             <th>Gönderilen</th>
                             <th>Gönderilen Mail</th>
 
@@ -33,6 +34,7 @@
                             <tr>
                                 <td>@item.writerMessageID</td>
                                 <td>@item.subject</td>
+                                <td>  @await Component.InvokeAsync("MessageImage", new { mail = item.reciever }) </td>
                                 <td>@item.recieverName</td>
                                 <td>@item.reciever</td>
                                 <td>@(((DateTime)item.date).ToString("dd-MMM-yyyy"))</td>

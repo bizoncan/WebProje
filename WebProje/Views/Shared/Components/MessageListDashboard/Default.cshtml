@@ -5,7 +5,7 @@
         <div class="card-body">
             <div class="d-flex flex-row justify-content-between">
                 <h4 class="card-title">Mesajlar</h4>
-                <p class="text-muted mb-1 small">Hepsini Görüntüle</p>
+                <a href="/AdminMessage/RecieverMessageList"><p class="text-muted mb-1 small">Hepsini Görüntüle</p></a>
             </div>
             <div class="preview-list">
                 @foreach (var item in Model)
@@ -19,7 +19,7 @@
                             <div class="flex-grow">
                                 <div class="d-flex d-md-block d-xl-flex justify-content-between">
                                     <h6 class="preview-subject">@item.senderName</h6>
-                                    <p class="text-muted text-small">@item.date</p>
+                                    <p class="text-muted text-small">@(((DateTime)item.date).ToString("dd-MMM-yyyy"))</p>
                                 </div>
                                 <p class="text-muted message-content" >@item.subject</p>
 

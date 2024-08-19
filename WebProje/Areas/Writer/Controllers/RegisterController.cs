@@ -7,6 +7,7 @@ using WebProje.Areas.Writer.Models;
 
 namespace WebProje.Areas.Writer.Controllers
 {
+    [AllowAnonymous]
     [Authorize(Roles = "Writer")]
     [Area("Writer")]
     [Route("Writer/[controller]/[action]")]

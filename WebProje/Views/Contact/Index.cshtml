@@ -30,7 +30,7 @@
                             <tr>
                                 <td>@item.messageID</td>
                                 <td>@item.name</td>
-                                <td>@item.date</td>
+                                <td>@(((DateTime)item.date).ToString("dd-MMM-yyyy"))</td>
                                 <td><a href="/Contact/DeleteMessage/@item.messageID" class="btn btn-outline-danger">Sil</a></td>
                                 <td><a href="/Contact/SeeMessage/@item.messageID" class="btn btn-outline-success">Gör</a></td>
 

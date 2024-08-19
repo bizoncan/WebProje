@@ -7,47 +7,97 @@
 <div class="col-md-6">
     <div class="p-2">
         <button type="button" id="getlistall" class="btn btn-outline-primary">Verileri getir</button>
-        <button type="button" id="adduser" class="btn btn-outline-info">Verileri getir</button>
+        
     </div>
 </div>
+
 
 <h4 class="text-center">Yazarlar Listesi</h4>
 <div class="p-2" id="listuser"></div>
 
+
+<h4 class="text-center">Yazar Bilgileri</h4>
+<div class="p-2" id="getlistbyId"></div>
+
+
+
+<div class="col-md-12">
+	<h4>Id'ye Göre Sil</h4>
+	<input type="text" class="form-control" id="inpdelid" placeholder="ID giriniz" />
+	<br />
+	<button type="button" id="delete" class="btn btn-outline-danger">Sil</button>
+	<br />
+</div>
 <br />
 <div class="col-md-12">
-   <input type="text" class="form-control" id="inpName" placeholder="ad" />
-   <br />
-   <input type="text" class="form-control" id="inpName" placeholder="ad" />
-   <br />
-   <input type="text" class="form-control" id="inpName" placeholder="ad" />
-    <br />
-   <input type="text" class="form-control" id="inpName" placeholder="ad" />
-    <br />
-   <input type="text" class="form-control" id="inpName" placeholder="ad" />
+	<h4>Id'ye Göre Gör</h4>
+	<input type="text" class="form-control" id="inpid" placeholder="ID giriniz" />
+	<br />
+	<button type="button" id="seebyID" class="btn btn-outline-info">Gör</button>
+	<br />
 </div>
-
+<br />
 
 
 
 @section Scripts
 {
-    <script src="~/lib/jquery/dist/jquery.js"></script>
-    <script>
-        $("#getlistall").click(function () {
-            $.ajax({
-                contentType: "application/json",
-                dataType: "json",
-                type: "GET",
-                url: "/WriterUser/ListUser/",
-                success: function (data) {
-                    console.log(data);
-                    // Burada gelen veriyi istediğiniz gibi işleyebilirsiniz
-                },
-                error: function (xhr, status, error) {
-                    console.error("Hata oluştu: ", error);
-                }
-            });
-        });
-    </script>
+	<script src="~/lib/jquery/dist/jquery.js"></script>
+	<script>
+		$("#getlistall").click(function () {
+			$.ajax({
+				contentType: "application/json",
+				dataType: "json",
+				type: "GET",
+				url: "/WriterUser/ListUser/",
+				success: function (funk) {
+					let values = jQuery.parseJSON(funk)
+					console.log(funk);
+					let htmlst = "<table class=table table-bordered>   <tr>  <th># </th><th>Kullanıcı Adı </th> <th> İsim </th> <th> Soyisim </th><th> Resim  </th><th> Email </th> </tr>"
+					$.each(values, (index, value) => {
+						htmlst += `<tr> <td>${value.Id} </td> <td> ${value.UserName} </td> <td>${value.name} </td> <td>${value.surname} </td><td><img src="${value.imageURL}" alt="image" class="rounded-circle profile-pic"> </td><td>${value.Email} </td> </tr>`
+					});
+					htmlst += "</table>"
+					$("#listuser").html(htmlst)
+
+				},
+				error: function (xhr, status, error) {
+					console.error("Hata oluştu: ", error);
+				}
+			});
+		});
+		$("#delete").click(function () {
+			let id = $("#inpdelid").val();
+			$.ajax({
+				contentType: "application/json",
+				dataType: "json",
+				type: "DELETE",
+				url: "/WriterUser/DeleteUser/" + id,
+				success: function (funk3) {
+					let val = funk3
+					alert(val + "başarıyla silindi")
+				}
+			});
+
+		});
+		$("#seebyID").click(function () {
+			let id = $("#inpid").val();
+			$.ajax({
+				contentType: "application/json",
+				dataType: "json",
+				type: "GET",
+				url: "/WriterUser/GetById/" + id,
+				success: function (funk2) {
+					let value = jQuery.parseJSON(funk2)
+					let htmlst = `<table class=table table-hover>   <tr>  <th># </th> <td> ${value.Id} </td> </tr> <tr>  <th>Kullanıcı Adı </th> <td> ${value.UserName} </td> </tr>    <tr>  <th>İsim </th> <td> ${value.name} </td> </tr>    <tr>  <th>Soyisim</th> <td> ${value.surname} </td> </tr> <tr>  <th>Resim Yolu</th> <td> <img src="${value.imageURL}" alt="image" class="rounded-circle profile-pic">  </td> </tr><tr>  <th>Email</th> <td> ${value.Email} </td> </tr> `
+					htmlst += "</table>"
+					$("#getlistbyId").html(htmlst)
+				}
+			});
+
+
+
+		});
+
+	</script>
 }

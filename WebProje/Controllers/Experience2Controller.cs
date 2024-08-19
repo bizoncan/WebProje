@@ -39,5 +39,13 @@ namespace WebProje.Controllers
 			experienceManager.TDelete(v);
 			return NoContent();
 		}
+		[HttpPost]
+		public IActionResult EditExperience(int id, [FromBody] experience p)
+		{
+            p.experienceID = id;    
+			experienceManager.TUpdate(p);
+			var values = JsonConvert.SerializeObject(p);
+			return Json(values);
+		}
 	}
 }

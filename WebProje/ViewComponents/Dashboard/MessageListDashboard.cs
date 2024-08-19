@@ -15,7 +15,7 @@ namespace WebProje.ViewComponents.Dashboard
 		{
 
 			string p = "admin@gmail.com ";
-			var values = writerMessageManager.GetListRecieverMessage(p);
+			var values = writerMessageManager.GetListRecieverMessage(p).OrderByDescending(x=> x.writerMessageID).Take(4).ToList();
 			return View(values);
 		}
 	}

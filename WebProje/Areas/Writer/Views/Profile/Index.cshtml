@@ -8,9 +8,12 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Bilgilerini düzenle</h4>
-            <p class="card-description">
-                Basic form elements
-            </p>
+
+       
+            <div class="user-image-container">
+                @await Component.InvokeAsync("UserImageComponent")
+            </div>
+
             <form class="forms-sample" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="exampleInputName1">İsim</label>
@@ -48,4 +51,12 @@
         </div>
     </div>
 </div>
- 
+<style>
+    .user-image-container img {
+        width: 75px;
+        height: 75px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+</style>

@@ -1,0 +1,45 @@
+﻿@model varlikKatmani.Concrete.testimonial
+@{
+    ViewData["Title"] = "AddTestimonial";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("AddTestimonial", "Testimonial", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Hakkımda Ekle</h4>
+                <p class="card-description">  </p>
+
+                @Html.Label("Referans Adı")
+                @Html.TextBoxFor(x => x.clientName, new { @class = "form-control" })
+               
+
+                <br />
+                @Html.Label("Şirket Adı")
+                @Html.TextBoxFor(x => x.company, new { @class = "form-control" })
+              
+
+                <br />
+                @Html.Label("Yorum")
+                @Html.TextBoxFor(x => x.comment, new { @class = "form-control" })
+      
+                <br />
+                @Html.Label("Resim Adresi")
+                @Html.TextBoxFor(x => x.imageURL, new { @class = "form-control" })
+     
+
+                <br />
+                @Html.Label("Ünvan")
+                @Html.TextBoxFor(x => x.title, new { @class = "form-control" })
+              
+                <br />
+                <button class="btn btn-success">Kaydet</button>
+
+
+            </div>
+        </div>
+    </div>
+}
+

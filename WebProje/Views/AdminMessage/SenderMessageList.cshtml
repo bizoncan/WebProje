@@ -34,7 +34,7 @@
                                 <td>@item.writerMessageID</td>
                                 <td>@item.recieverName</td>
                                 <td>@item.subject</td>
-                                <td>@item.date</td>
+                                <td>@(((DateTime)item.date).ToString("dd-MMM-yyyy"))</td>
                                 <td><button onclick="redirectToUrl('/AdminMessage/DeleteAdminMessage/@item.writerMessageID?&s=sender')" name="button" value="sender" class="btn btn-outline-danger">Sil</button></td>
                                 <td><a href="/AdminMessage/SeeSentMessage/@item.writerMessageID" class="btn btn-outline-success">Gör</a></td>
                                 
