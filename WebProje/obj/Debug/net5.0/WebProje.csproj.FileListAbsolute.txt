@@ -253,3 +253,5 @@ C:\Users\HuseyinCan\source\repos\WebProje\WebProje\obj\Debug\net5.0\Razor\Views\
 C:\Users\HuseyinCan\source\repos\WebProje\WebProje\obj\Debug\net5.0\WebProje.sourcelink.json
 C:\Users\HuseyinCan\source\repos\WebProje\WebProje\obj\Debug\net5.0\Razor\Views\Testimonial\AddTestimonial.cshtml.g.cs
 C:\Users\HuseyinCan\source\repos\WebProje\WebProje\obj\Debug\net5.0\Razor\Areas\Writer\Views\Shared\Components\MessageImage\Default.cshtml.g.cs
+C:\Users\HuseyinCan\source\repos\WebProje\WebProje\obj\Debug\net5.0\Razor\Views\Admin\PartialNewNavbar.cshtml.g.cs
+C:\Users\HuseyinCan\source\repos\WebProje\WebProje\obj\Debug\net5.0\Razor\Views\Shared\Components\UserImageAdminList\Default.cshtml.g.cs

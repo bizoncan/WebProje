@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebProje")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d18021021f43ca70782dc1b77deb24f410c9ac1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c68e343b9849207168522a05af810ac07c03b7e")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebProje.Views")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 

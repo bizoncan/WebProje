@@ -16,6 +16,7 @@
                     <thead>
                         <tr>
                             <th>#</th>
+                            <th>Yollayan resmi</th>
                             <th>İsim</th>
                             <th>Başlık</th>
                             <th>Tarih</th>
@@ -29,6 +30,7 @@
 
                             <tr>
                                 <td>@item.writerMessageID</td>
+                                <td>@await Component.InvokeAsync("SenderImage", new { email = item.sender })</td>
                                 <td>@item.senderName</td>
                                 <td>@item.subject</td>
                                 <td>@(((DateTime)item.date).ToString("dd-MMM-yyyy"))</td>

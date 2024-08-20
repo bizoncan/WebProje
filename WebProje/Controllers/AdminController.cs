@@ -41,6 +41,10 @@ namespace WebProje.Controllers
 		{
 			return PartialView();
 		}
+	public PartialViewResult PartialNewNavbar()
+		{
+			return PartialView();
+		}
 	
 
     }
